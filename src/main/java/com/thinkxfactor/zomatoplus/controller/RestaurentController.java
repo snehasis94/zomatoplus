@@ -11,42 +11,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thinkxfactor.zomatoplus.model.Item;
-import com.thinkxfactor.zomatoplus.model.Resturent;
-import com.thinkxfactor.zomatoplus.model.User;
-import com.thinkxfactor.zomatoplus.repository.ItemRepository;
-import com.thinkxfactor.zomatoplus.repository.ResturentRepository;
+import com.thinkxfactor.zomatoplus.model.Restaurent;
 //import com.thinkxfactor.zomatoplus.model.User;
-import com.thinkxfactor.zomatoplus.repository.UserRepository;
+import com.thinkxfactor.zomatoplus.repository.ItemRepository;
+import com.thinkxfactor.zomatoplus.repository.RestaurentRepository;
+//import com.thinkxfactor.zomatoplus.model.User;
+//import com.thinkxfactor.zomatoplus.repository.UserRepository;
 
 @RestController
-@RequestMapping("/resturent")
+@RequestMapping("/restaurent")
 
-public class ResturentController {
+public class RestaurentController {
 	
 	@Autowired
-	private ResturentRepository resturentRepository;
+	private RestaurentRepository restaurentRepository;
 	
 	@Autowired
 	private ItemRepository itemRepository;
 	
 	@PostMapping("/add")
-	public Resturent addResturent(@RequestBody Resturent resturent) {
-		Resturent persistedResturent=resturentRepository.save(resturent);
-		return persistedResturent;
-		}
+	public Restaurent addrestaurant(@RequestBody Restaurent user) {
+		
+		Restaurent persistedUser=restaurentRepository.save(user);
+		
+		
+		return persistedUser;
+	}
 	/*@PostMapping("/create")
-	public Resturent CreateResturent(@RequestBody Resturent res) {
+	public Restaurent CreateResturent(@RequestBody Restaurent res) {
 		System.out.println(res.toString());
 		
 		return res;
 		
 	}*/
 
-	@GetMapping("/getall")
-	public List<Resturent> getAll(){
-		List<Resturent> listofResturent=resturentRepository.findAll();
+	@GetMapping("/getAll")
+	public List<Restaurent> getAll(){
+		List<Restaurent> listofRestaurent=restaurentRepository.findAll();
 				
-		return listofResturent;
+		return listofRestaurent;
 	}
 	
 	@PostMapping("/additem")

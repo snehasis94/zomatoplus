@@ -7,11 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbl_resturent")
-public class Resturent {
+@Table(name="tbl_restaurent")
+public class Restaurent {
 	@Id
 	@GeneratedValue
-	@Column(name="returent_id")
+	@Column(name="retaurent_id")
 	private long id;
 	
 	@Column(name="city")
@@ -28,10 +28,12 @@ public class Resturent {
 	private String website;
 	@Column(name="like_count")
 	private Integer like_count;
-	public Resturent() {
+	
+	public Restaurent() {
 		super();
 	}
-	public Resturent(String city, String name, String address, String contact, String description,
+	
+	public Restaurent(String city, String name, String address, String contact, String description,
 			String website, Integer like_count) {
 		super();
 		//this.id = id;
@@ -43,6 +45,7 @@ public class Resturent {
 		this.website = website;
 		this.like_count = like_count;
 	}
+	
 	public long getId() {
 		return id;
 	}
@@ -67,6 +70,7 @@ public class Resturent {
 	public Integer getLike_count() {
 		return like_count;
 	}
+	
 	public void setId(long id) {
 		this.id = id;
 	}
